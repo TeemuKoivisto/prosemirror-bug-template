@@ -1,8 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "deploy:init": "git subtree push --prefix basic origin gh-pages",
-    "deploy": "git push origin `git subtree split --prefix basic main`:gh-pages --force",
+    "deploy:init": "git subtree push --prefix static origin gh-pages",
+    "deploy": "git push origin `git subtree split --prefix static main`:gh-pages --force",
     "start": "node serve.js"
   }
 }

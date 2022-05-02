@@ -5,7 +5,7 @@ const http = require("http"),
   url = require("url"),
   path = require("path"),
   fs = require("fs"),
-  folder = process.argv[2] || "basic",
+  folder = process.argv[2] || "static",
   port = process.argv[3] || 4040
 
 /**
