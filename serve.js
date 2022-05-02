@@ -5,12 +5,29 @@ const http = require("http"),
   url = require("url"),
   path = require("path"),
   fs = require("fs"),
-  port = process.argv[2] || 4040
+  folder = process.argv[2] || "basic",
+  port = process.argv[3] || 4040
+
+/**
+ * @param {string} filename 
+ */
+function getContentType(filename) {
+  switch (filename.split('.').reverse()[0]) {
+    case 'js':
+      return 'application/javascript'
+    case 'css':
+      return 'text/css'
+    case 'html':
+      return 'text/html'
+    default:
+      return 'text/plain'
+  }
+}
 
 http.createServer(function(request, response) {
 
   const uri = url.parse(request.url).pathname
-  let filename = path.join(process.cwd(), 'static', uri)
+  let filename = path.join(process.cwd(), folder, uri)
   
   fs.stat(filename, function(err,stats) {
     if (err) {
@@ -29,7 +46,9 @@ http.createServer(function(request, response) {
         response.end()
         return
       }
-      response.writeHead(200)
+      
+      const contentType = getContentType(filename)
+      response.writeHead(200, {'Content-Type': `${contentType}; charset=utf-8` })
       response.write(file, 'binary')
       response.end()
     })

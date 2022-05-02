@@ -14,10 +14,12 @@
     html {
       font-size: 16px;
     }
+
     main {
       margin: 2rem auto;
       max-width: 700px;
     }
+
     .ProseMirror {
       min-height: 140px;
       overflow-wrap: break-word;
@@ -73,70 +75,13 @@
   import { EditorView } from "prosemirror-view";
   import { exampleSetup } from "prosemirror-example-setup";
 
+  import { schema } from './full-schema.js'
+
   let docJson
   (async () => {
     docJson = await fetch('./doc.json').then((res) => res.json())
   })()
-  // import "prosemirror-example-setup/style/style.css";
-  // import "prosemirror-menu/style/menu.css";
 
-  const schema = new Schema({
-    nodes: {
-      doc: {
-        content: "block+"
-      },
-      paragraph: {
-        content: "inline*",
-        group: "block",
-        parseDOM: [{ tag: "p" }],
-        toDOM() {
-          return ["p", 0];
-        }
-      },
-      text: {
-        group: "inline"
-      }
-    },
-    marks: {
-      italic: {
-        attrs: { color: { default: null } },
-        parseDOM: [{ tag: "i" }, { tag: "em" }, { style: "font-style=italic" }],
-        toDOM(el) {
-          const attrs = {
-            style: `background: ${el.attrs.color};`
-          };
-          return ["em", attrs, 0];
-        }
-      },
-      bold: {
-        attrs: { color: { default: null } },
-        parseDOM: [
-          { tag: "strong" },
-          // This works around a Google Docs misbehavior where
-          // pasted content will be inexplicably wrapped in `<b>`
-          // tags with a font-weight normal.
-          {
-            tag: "b",
-            getAttrs: (p) => {
-              return node.style.fontWeight != "normal" && null;
-            }
-          },
-          {
-            style: "font-weight",
-            getAttrs: (p) => {
-              return /^(bold(er)?|[5-9]\d{2,})$/.test(value) && null;
-            }
-          }
-        ],
-        toDOM(el) {
-          const attrs = {
-            style: `background: ${el.attrs.color};`
-          };
-          return ["strong", attrs, 0];
-        }
-      }
-    }
-  });
   const state = EditorState.create({
     schema,
     plugins: exampleSetup({ schema })
