@@ -20,6 +20,10 @@
       max-width: 700px;
     }
 
+    .gh-link {
+      margin-right: 2rem;
+    }
+
     .ProseMirror {
       min-height: 140px;
       overflow-wrap: break-word;
@@ -59,15 +63,15 @@
   <main>
     <h1><a href="https://teemukoivisto.github.io/prosemirror-bug-template">ProseMirror bug reproduction</a></h1>
     <p>
-      <a href="https://github.com/TeemuKoivisto/prosemirror-bug-template">Github repo</a>
+      <a class="gh-link" href="https://github.com/TeemuKoivisto/prosemirror-bug-template">Github repo</a>
       <a href="https://discuss.prosemirror.net/">Discourse thread in question</a>
     </p>
     <button id="reset-btn">Reset</button>
     <ol>
       <li>Click 'Reset'</li>
-      <li>Select: '<i>p</i>o'</li>
-      <li>Press any normal key (eg 'm')</li>
-      <li>All the mark attributes should vanish</li>
+      <li>Select 'bug'</li>
+      <li>Press something</li>
+      <li>Bug should appear</li>
     </ol>
     <div id="editor"></div>
   </main>
