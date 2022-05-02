@@ -15,6 +15,8 @@ function getContentType(filename) {
   switch (filename.split('.').reverse()[0]) {
     case 'js':
       return 'application/javascript'
+    case 'json':
+      return 'application/json'
     case 'css':
       return 'text/css'
     case 'html':
