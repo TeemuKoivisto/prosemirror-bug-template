@@ -2,10 +2,10 @@ import { Schema } from 'prosemirror-model'
 import { bulletList, listItem, orderedList } from 'prosemirror-schema-list'
 
 /**
- * 
- * @param {Record<string, any>} obj 
- * @param {Record<string, any>} props 
- * @returns 
+ *
+ * @param {Record<string, any>} obj
+ * @param {Record<string, any>} props
+ * @returns
  */
 function add(obj, props) {
   /** @type Record<string, any> */
@@ -20,9 +20,9 @@ function add(obj, props) {
 }
 
 /**
- * 
- * @param {Node | string} p 
- * @returns 
+ *
+ * @param {Node | string} p
+ * @returns
  */
 const getCellAttrs = (p) => {
   /** @type HTMLTableCellElement */

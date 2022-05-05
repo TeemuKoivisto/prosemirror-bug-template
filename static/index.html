@@ -1,83 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>prosemirror-bug-template</title>
-  <meta name="description" content="ProseMirror bug template">
-  <link rel="stylesheet" href="https://unpkg.com/prosemirror-example-setup@1.1.2/style/style.css">
-  </link>
-  <link rel="stylesheet" href="https://unpkg.com/prosemirror-menu@1.1.4/style/menu.css">
-  </link>
-  <style>
-    html {
-      font-size: 16px;
-    }
-
-    main {
-      margin: 2rem auto;
-      max-width: 700px;
-    }
-
-    .gh-link {
-      margin-right: 2rem;
-    }
-
-    .ProseMirror {
-      min-height: 140px;
-      overflow-wrap: break-word;
-      outline: none;
-      padding: 10px;
-      white-space: pre-wrap;
-    }
-  </style>
-
-  <script type="importmap">
-    {
-      "imports": {
-        "crelt": "https://unpkg.com/crelt/index.es.js",
-        "orderedmap": "https://unpkg.com/orderedmap/index.es.js",
-        "rope-sequence": "https://unpkg.com/rope-sequence/dist/index.es.js",
-        "w3c-keyname": "https://unpkg.com/w3c-keyname/index.es.js",
-        "prosemirror-commands": "https://unpkg.com/prosemirror-commands/dist/index.es.js",
-        "prosemirror-dropcursor": "https://unpkg.com/prosemirror-dropcursor/dist/index.es.js",
-        "prosemirror-example-setup": "https://unpkg.com/prosemirror-example-setup/dist/index.es.js",
-        "prosemirror-gapcursor": "https://unpkg.com/prosemirror-gapcursor/dist/index.es.js",
-        "prosemirror-history": "https://unpkg.com/prosemirror-history/dist/index.es.js",
-        "prosemirror-inputrules": "https://unpkg.com/prosemirror-inputrules/dist/index.es.js",
-        "prosemirror-keymap": "https://unpkg.com/prosemirror-keymap/dist/index.es.js",
-        "prosemirror-menu": "https://unpkg.com/prosemirror-menu/dist/index.es.js",
-        "prosemirror-view": "https://unpkg.com/prosemirror-view/dist/index.es.js",
-        "prosemirror-model": "https://unpkg.com/prosemirror-model/dist/index.es.js",
-        "prosemirror-schema-list": "https://unpkg.com/prosemirror-schema-list/dist/index.es.js",
-        "prosemirror-state": "https://unpkg.com/prosemirror-state/dist/index.es.js",
-        "prosemirror-transform": "https://unpkg.com/prosemirror-transform/dist/index.es.js"
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>prosemirror-bug-template</title>
+    <meta name="description" content="ProseMirror bug template" />
+    <link rel="stylesheet" href="https://unpkg.com/prosemirror-example-setup@1.1.2/style/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/prosemirror-menu@1.1.4/style/menu.css" />
+    <style>
+      html {
+        font-size: 16px;
       }
-    }
-  </script>
-  <script src="https://unpkg.com/prosemirror-dev-toolkit/dist/bundle.umd.min.js"></script>
-  <script async src="https://unpkg.com/es-module-shims@0.13.1/dist/es-module-shims.js"></script>
-</head>
 
-<body>
-  <noscript>You need to enable JavaScript to run this app.</noscript>
-  <main>
-    <h1><a href="https://teemukoivisto.github.io/prosemirror-bug-template">ProseMirror bug reproduction</a></h1>
-    <p>
-      <a class="gh-link" href="https://github.com/TeemuKoivisto/prosemirror-bug-template">Github repo</a>
-      <a href="https://discuss.prosemirror.net/">Discourse thread in question</a>
-    </p>
-    <button id="reset-btn">Reset</button>
-    <ol>
-      <li>Click 'Reset'</li>
-      <li>Select 'bug'</li>
-      <li>Press something</li>
-      <li>Bug should appear</li>
-    </ol>
-    <div id="editor"></div>
-  </main>
-  <script defer type="module" src="./app.js"></script>
-</body>
+      main {
+        margin: 2rem auto;
+        max-width: 700px;
+      }
 
+      .gh-link {
+        margin-right: 2rem;
+      }
+
+      .ProseMirror {
+        min-height: 140px;
+        overflow-wrap: break-word;
+        outline: none;
+        padding: 10px;
+        white-space: pre-wrap;
+      }
+    </style>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "crelt": "https://unpkg.com/crelt/index.es.js",
+          "orderedmap": "https://unpkg.com/orderedmap/index.es.js",
+          "rope-sequence": "https://unpkg.com/rope-sequence/dist/index.es.js",
+          "w3c-keyname": "https://unpkg.com/w3c-keyname/index.es.js",
+          "prosemirror-commands": "https://unpkg.com/prosemirror-commands/dist/index.es.js",
+          "prosemirror-dropcursor": "https://unpkg.com/prosemirror-dropcursor/dist/index.es.js",
+          "prosemirror-example-setup": "https://unpkg.com/prosemirror-example-setup/dist/index.es.js",
+          "prosemirror-gapcursor": "https://unpkg.com/prosemirror-gapcursor/dist/index.es.js",
+          "prosemirror-history": "https://unpkg.com/prosemirror-history/dist/index.es.js",
+          "prosemirror-inputrules": "https://unpkg.com/prosemirror-inputrules/dist/index.es.js",
+          "prosemirror-keymap": "https://unpkg.com/prosemirror-keymap/dist/index.es.js",
+          "prosemirror-menu": "https://unpkg.com/prosemirror-menu/dist/index.es.js",
+          "prosemirror-view": "https://unpkg.com/prosemirror-view/dist/index.es.js",
+          "prosemirror-model": "https://unpkg.com/prosemirror-model/dist/index.es.js",
+          "prosemirror-schema-list": "https://unpkg.com/prosemirror-schema-list/dist/index.es.js",
+          "prosemirror-state": "https://unpkg.com/prosemirror-state/dist/index.es.js",
+          "prosemirror-transform": "https://unpkg.com/prosemirror-transform/dist/index.es.js"
+        }
+      }
+    </script>
+    <script src="https://unpkg.com/prosemirror-dev-toolkit/dist/bundle.umd.min.js"></script>
+    <script async src="https://unpkg.com/es-module-shims@0.13.1/dist/es-module-shims.js"></script>
+  </head>
+
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <main>
+      <h1>
+        <a href="https://teemukoivisto.github.io/prosemirror-bug-template">ProseMirror bug reproduction</a>
+      </h1>
+      <p>
+        <a class="gh-link" href="https://github.com/TeemuKoivisto/prosemirror-bug-template">Github repo</a>
+        <a href="https://discuss.prosemirror.net/">Discourse thread in question</a>
+      </p>
+      <button id="reset-btn">Reset</button>
+      <ol>
+        <li>Click 'Reset'</li>
+        <li>Select 'bug'</li>
+        <li>Press something</li>
+        <li>Bug should appear</li>
+      </ol>
+      <div id="editor"></div>
+    </main>
+    <script defer type="module" src="./app.js"></script>
+  </body>
 </html>
