@@ -5,51 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>prosemirror-bug-template</title>
     <meta name="description" content="ProseMirror bug template" />
-    <link rel="stylesheet" href="https://unpkg.com/prosemirror-example-setup@1.1.2/style/style.css" />
-    <link rel="stylesheet" href="https://unpkg.com/prosemirror-menu@1.1.4/style/menu.css" />
-    <style>
-      html {
-        font-size: 16px;
-      }
-
-      main {
-        margin: 2rem auto;
-        max-width: 700px;
-      }
-
-      .gh-link {
-        margin-right: 2rem;
-      }
-
-      .ProseMirror {
-        min-height: 140px;
-        overflow-wrap: break-word;
-        outline: none;
-        padding: 10px;
-        white-space: pre-wrap;
-      }
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/prosemirror-example-setup/style/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/prosemirror-menu/style/menu.css" />
+    <link rel="stylesheet" href="style.css" />
 
     <script type="importmap">
       {
         "imports": {
-          "crelt": "https://unpkg.com/crelt/index.es.js",
-          "orderedmap": "https://unpkg.com/orderedmap/index.es.js",
-          "rope-sequence": "https://unpkg.com/rope-sequence/dist/index.es.js",
-          "w3c-keyname": "https://unpkg.com/w3c-keyname/index.es.js",
-          "prosemirror-commands": "https://unpkg.com/prosemirror-commands/dist/index.es.js",
-          "prosemirror-dropcursor": "https://unpkg.com/prosemirror-dropcursor/dist/index.es.js",
-          "prosemirror-example-setup": "https://unpkg.com/prosemirror-example-setup/dist/index.es.js",
-          "prosemirror-gapcursor": "https://unpkg.com/prosemirror-gapcursor/dist/index.es.js",
-          "prosemirror-history": "https://unpkg.com/prosemirror-history/dist/index.es.js",
-          "prosemirror-inputrules": "https://unpkg.com/prosemirror-inputrules/dist/index.es.js",
-          "prosemirror-keymap": "https://unpkg.com/prosemirror-keymap/dist/index.es.js",
-          "prosemirror-menu": "https://unpkg.com/prosemirror-menu/dist/index.es.js",
-          "prosemirror-view": "https://unpkg.com/prosemirror-view/dist/index.es.js",
-          "prosemirror-model": "https://unpkg.com/prosemirror-model/dist/index.es.js",
-          "prosemirror-schema-list": "https://unpkg.com/prosemirror-schema-list/dist/index.es.js",
-          "prosemirror-state": "https://unpkg.com/prosemirror-state/dist/index.es.js",
-          "prosemirror-transform": "https://unpkg.com/prosemirror-transform/dist/index.es.js"
+          "crelt": "https://unpkg.com/crelt/index.js",
+          "orderedmap": "https://unpkg.com/orderedmap/dist/index.js",
+          "rope-sequence": "https://unpkg.com/rope-sequence/dist/index.js",
+          "w3c-keyname": "https://unpkg.com/w3c-keyname/index.js",
+          "prosemirror-commands": "https://unpkg.com/prosemirror-commands/dist/index.js",
+          "prosemirror-dropcursor": "https://unpkg.com/prosemirror-dropcursor/dist/index.js",
+          "prosemirror-example-setup": "https://unpkg.com/prosemirror-example-setup/dist/index.js",
+          "prosemirror-gapcursor": "https://unpkg.com/prosemirror-gapcursor/dist/index.js",
+          "prosemirror-history": "https://unpkg.com/prosemirror-history/dist/index.js",
+          "prosemirror-inputrules": "https://unpkg.com/prosemirror-inputrules/dist/index.js",
+          "prosemirror-keymap": "https://unpkg.com/prosemirror-keymap/dist/index.js",
+          "prosemirror-menu": "https://unpkg.com/prosemirror-menu/dist/index.js",
+          "prosemirror-view": "https://unpkg.com/prosemirror-view/dist/index.js",
+          "prosemirror-model": "https://unpkg.com/prosemirror-model/dist/index.js",
+          "prosemirror-schema-list": "https://unpkg.com/prosemirror-schema-list/dist/index.js",
+          "prosemirror-state": "https://unpkg.com/prosemirror-state/dist/index.js",
+          "prosemirror-transform": "https://unpkg.com/prosemirror-transform/dist/index.js"
         }
       }
     </script>

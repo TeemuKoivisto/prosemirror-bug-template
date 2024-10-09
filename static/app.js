@@ -4,10 +4,7 @@ import { exampleSetup } from 'prosemirror-example-setup'
 
 import { schema } from './schema.js'
 
-let docJson
-;(async () => {
-  docJson = await fetch('./doc.json').then((res) => res.json())
-})()
+const docJson = await fetch('./doc.json').then((res) => res.json())
 
 const state = EditorState.create({
   schema,
@@ -16,7 +13,6 @@ const state = EditorState.create({
 const view = new EditorView(document.querySelector('#editor'), {
   state,
 })
-applyDevTools(view)
 
 const reset = (view) => {
   const { dispatch, state } = view

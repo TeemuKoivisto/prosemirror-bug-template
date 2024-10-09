@@ -6,7 +6,7 @@ const http = require('http'),
   path = require('path'),
   fs = require('fs'),
   folder = process.argv[2] || 'static',
-  port = process.argv[3] || 4040
+  port = process.argv[3] || 4080
 
 /**
  * @param {string} filename
